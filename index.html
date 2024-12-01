@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книга Рецептів</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Логотип">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#recipes">Рецепти</a></li>
+                <li><a href="#offers">Пропозиції</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <h1>Книга Рецептів</h1>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-box">
+            <h2 style="font-size: 2.5rem;">Про нас</h2>
+            <p>Ласкаво просимо!
+
+                Тут ви знайдете найкращі рецепти для вашого натхнення — від традиційних українських страв до популярних міжнародних делікатесів. Наші рецепти допоможуть вам створювати смачні страви легко і швидко, незалежно від вашого рівня досвіду на кухні. Приготуйте з нами і відкривайте нові смаки!
+                
+                </p>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="recipes-section">
+        <h2>Рецепти</h2>
+        <div class="slider-container">
+            <button class="slider-btn left-btn" onclick="slideLeft()">‹</button>
+            <div class="slider">
+                <a href="borscht.html" class="recipe-card">
+                    <img src="borscht.png" alt="Борщ червоний">
+                    <h3>Борщ червоний</h3>
+                    <p>Швидкий рецепт для приготування червоного борщу</p>
+                    <span class="new-label">New</span>
+                </a>
+                <a href="steak.html" class="recipe-card">
+                    <img src="steak.png" alt="Стейк">
+                    <h3>Стейк</h3>
+                    <p>Один з простих і смачних рецептів для приготування стейку</p>
+                    <span class="new-label">New</span>
+                </a>
+                <a href="dumpling.html" class="recipe-card">
+                    <img src="dumpling.png" alt="Хінкалі">
+                    <h3>Хінкалі</h3>
+                    <p>Рецепт для приготування соковитих і смачних хінкалі</p>
+                    <span class="new-label">New</span>
+                </a>
+                <a href="pasta.html" class="recipe-card">
+                    <img src="pasta.png" alt="Паста">
+                    <h3>Паста</h3>
+                    <p>Простий рецепт для приготування смачної пасти</p>
+                    <span class="new-label">New</span>
+                </a>
+                <a href="pizza.html" class="recipe-card">
+                    <img src="pizza.png" alt="Піца">
+                    <h3>Піца</h3>
+                    <p>Італійська класична піца для любителів сиру</p>
+                    <span class="new-label">New</span>
+                </a>
+                <a href="mie.html" class="recipe-card">
+                    <img src="mie.png" alt="Суші">
+                    <h3>Суші</h3>
+                    <p>клубок рису, на який зверху викладають шматочок риби або морепродукти</p>
+                    <span class="new-label">New</span>
+                </a>
+            </div>            
+            <button class="slider-btn right-btn" onclick="slideRight()">›</button>
+        </div>
+    </section>
+    <!-- Fortune Wheel Section -->
+    <section class="fortune-wheel-section">
+        <h2>Спробуйте удачу та знайдіть свій рецепт</h2>
+        <div class="wheel-container">
+            <canvas id="wheel" width="400" height="400"></canvas>
+            <button class="spin-button" onclick="spinWheel()">Крутити колесо</button>
+        </div>
+        <p id="result" class="result-text"></p>
+    </section>  
+    <script src="script.js"></script>
+    <!-- Пропонуйте свої рецепти -->
+    <section id="propose-recipes-section" class="propose-recipes-section">
+        <h2>Пропонуйте свої рецепти</h2>
+        <div class="propose-recipe-form">
+            <form id="recipe-form">
+                <input type="text" id="user-name" placeholder="Ваше ім'я" required />
+                <textarea id="user-message" placeholder="Опишіть ваш рецепт" required></textarea>
+                <button type="submit">Надіслати</button>
+            </form>
+        </div>
+        <div id="suggested-recipes" class="suggested-recipes">
+            <h3>Запропоновані рецепти:</h3>
+            <!-- Динамічно додаються коментарі -->
+        </div>
+    </section>
