@@ -1,0 +1,511 @@
+/* Основні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lobster', sans-serif;
+    background: linear-gradient(120deg, #112004, #0d1f00, #0f1d01, #0a1401);
+    animation: gradientAnimation 6s ease infinite;
+    margin: 0;
+    color: white;
+}
+
+/* Header */
+header {
+    background-color: #4f6e34;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 50px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+header nav ul li a:hover {
+    color: #ffcc00;
+}
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнення лише для фону */
+    z-index: 1;
+}
+.banner h1 {
+    position: relative;
+    z-index: 2; /* Текст поверх затемнення */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Banner */
+.banner {
+    background-image: url('Kniga_reseptiv.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    font-family: 'Great Vibes', cursive;
+    position: relative; /* Позиціонуємо для псевдоелемента */
+}
+
+/* About Section */
+.about-section {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    background-image: url('Pro_nas.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 140px;
+    position: relative;
+}
+.about-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнення лише для фону */
+    z-index: 1;
+}
+.about-box {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(80, 100, 60, 0.8);
+    padding: 20px;
+    display: inline-block;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    width: 900px;
+}
+
+/* Recipes Section */
+.recipes-section {
+    padding: 40px 20px;
+    background-size: 200% 200%;
+    text-align: center;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.recipes-section h2 {
+    font-size: 2rem;
+    color: #254905;
+    margin-bottom: 20px;
+}
+
+/* Slider */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    max-width: 80%;
+    margin: auto;
+    height: 500px;
+}
+
+.slider {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+    /* Ширина слайдера задається так, щоб вміщувати багато карток */
+    width: max-content;
+}
+
+.slider-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #4f6e34;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.slider-btn:hover {
+    opacity: 1;
+}
+
+.left-btn {
+    left: 20px;
+}
+
+.right-btn {
+    right: 20px;
+}
+
+/* Recipe Card */
+.recipe-card {
+    display: block; /* Робимо посилання як блок */
+    text-decoration: none; /* Видаляємо підкреслення */
+    color: inherit; /* Зберігаємо колір тексту як у батьківського елементу */
+    background: linear-gradient(145deg, #e1f0c4, #cdd9a5);
+    width: 320px;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.recipe-card img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover img {
+    transform: scale(1.05);
+}
+
+
+.recipe-card h3 {
+    font-size: 1.6rem;
+    color: #3e4a24;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.recipe-card p {
+    font-size: 1.25rem;
+    color: #5c6e35;
+    margin-bottom: 20px;
+}
+
+.new-label {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 12px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Підлаштування під великі екрани */
+@media (min-width: 1200px) {
+    .recipe-card {
+        width: 350px;
+    }
+}
+
+.banner::before,
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнення на 50% */
+    z-index: 1; /* Накладається поверх зображення */
+}
+
+.banner h1, .about-box {
+    position: relative;
+    z-index: 2; /* Текст буде зверху затемнення */
+}
+
+
+
+
+
+/* Fortune Wheel Section */
+/* Темний зелений фон для секції */
+.fortune-wheel-section {
+    padding: 40px ;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Оформлення колеса */
+.wheel-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    z-index: 1;
+    
+}
+
+
+
+#wheel {
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border: 12px solid #2d4a2f;
+    width: 400px;
+    height: 400px;
+    animation: rotateIn 1.5s ease-in-out;
+}
+
+.spin-button {
+    font-family: 'Lobster', sans-serif;
+    margin-top: 100px;
+    padding: 14px 28px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background: linear-gradient(45deg, #355e30, #2d4a2f);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    animation: bounce 1s infinite;
+}
+
+.spin-button:hover {
+    background: linear-gradient(45deg, #3b5225, #264d00);
+    transform: scale(1.1);
+}
+
+/* Динамічний шрифт для тексту */
+.fortune-wheel-section h2 {
+    color: rgba(80, 100, 60, 0.8);
+    font-family: 'Lobster', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.result-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f0ffeb;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInText 1s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.result-link {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.result-link:hover {
+    color: #ffd633;
+    text-decoration: underline;
+}
+
+.result-text.animate {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+
+/* Анімація появи та динамічні ефекти */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateIn {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Пропонуйте свої рецепти */
+.propose-recipes-section {
+    padding: 40px;
+    background-image: url('backgroun3.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.propose-recipes-section h2,
+.wheel-of-fortune-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f8f8f8;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.propose-recipe-form {
+    margin-bottom: 30px;
+}
+
+#recipe-form input,
+#recipe-form textarea {
+    width: 90%;
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.1rem;
+    display: block;
+}
+
+#recipe-form button {
+    background: linear-gradient(45deg, #355e30, #2d4a2f);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+#recipe-form button:hover {
+    background: linear-gradient(45deg, #3b5225, #264d00);
+    transform: scale(1.05);
+}
+
+.suggested-recipes {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.suggested-recipes h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f8f8f8;
+}
+
+.recipe-comment {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.recipe-comment strong {
+    color: #264d00;
+}
+
+/* Колесо фортуни */
+.wheel-of-fortune-section {
+    background-color: rgba(46, 64, 46, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#fortune-wheel-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    border: 5px solid white;
+    border-radius: 50%;
+}
