@@ -18,8 +18,6 @@
  ![Пропозиції](https://github.com/user-attachments/assets/1a15f2ac-4b2d-43c2-aaa2-f1fb2f92d724)
 
 
- * ![вибір страв](https://github.com/user-attachments/assets/172dc5ce-ff3c-4a3d-ba7f-1bafcdc2d094)
-
 
 
 *Завантажте наш додаток вже сьогодні і перетворіть процес приготування їжі на справжнє задоволення!*
